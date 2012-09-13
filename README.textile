@@ -11,13 +11,13 @@ Sometimes, there may be artefacts left over when switching from master to produc
 1. Define routes callbacks
 	
 bc. µ::GET('/',function(){
-bc. 	echo 'What is your name?';
-bc. 	echo '<form method=post><input type=text name=username><input type=submit></form>';
-bc. });
+ 	echo 'What is your name?';
+ 	echo '<form method=post><input type=text name=username><input type=submit></form>';
+    });
 	
 bc. µ::POST('/',function(){
-bc. 	echo 'Hello ',$_POST['username'],', how are you?';
-bc. });
+ 	echo 'Hello ',$_POST['username'],', how are you?';
+    });
 
 2. Run the app
 	
