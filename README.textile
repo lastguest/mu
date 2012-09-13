@@ -6,8 +6,6 @@ bc. class µ{function __callStatic($n,$a){static $r;$s=$_SERVER;return $n=='_'?@
 
 h3. How to use
 
-Sometimes, there may be artefacts left over when switching from master to production. These are files that are ignored by Git and are easily cleaned up by running
-
 1. Define routes callbacks
 	
 bc. µ::GET('/',function(){
