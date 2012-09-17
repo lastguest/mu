@@ -4,6 +4,7 @@ a Sinatra inspired PHP microframework in only 140 bytes.
 
 bc. class µ{function __callStatic($n,$a){static $r;$s=$_SERVER;return $n=='_'?@$r[$s[REQUEST_METHOD]][$s[REDIRECT_URL]]():$r[$n][$a[0]]=$a[1];}}
 
+
 h3. How to use
 
 1. Define routes callbacks
@@ -11,11 +12,11 @@ h3. How to use
 bc. µ::GET('/',function(){
  	echo 'What is your name?';
  	echo '<form method=post><input type=text name=username><input type=submit></form>';
-    });
+});
 	
 bc. µ::POST('/',function(){
- 	echo 'Hello ',$_POST['username'],', how are you?';
-    });
+	echo 'Hello ',$_POST['username'],', how are you?';
+});
 
 2. Run the app
 	
