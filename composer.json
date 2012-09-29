@@ -1,0 +1,12 @@
+{
+	"name": "lastguest/mu",
+	"type": "library",
+	"description": "An URL router in only 140bytes",
+	"keywords": ["sinatra", "mu", "url-router", "router", "slim"],
+	"authors": [
+		{
+			"name": "Stefano Azzolini",
+			"email": "lastguest@gmail.com"
+		}
+	]
+}
