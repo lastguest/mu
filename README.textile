@@ -24,6 +24,12 @@ bc. µ::_();
 
 3. Breath.
 
+h2. Notes
+
+- Some configurations don't have the @REDIRECT_URL@ parameter, use @REQUEST_URI@ instead.
+- Later PHP versions need the @__callStatic@ method declared @public@ @static@
+
+
 h2. License (MIT)
 
 Copyright (c) 2012 Stefano Azzolini
