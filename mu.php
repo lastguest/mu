@@ -6,4 +6,4 @@
  * @author Stefano Azzolini <lastguest@gmail.com>
  */
 
-class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD)][getenv(REQUEST_URI)]():$r[$n][$a[0]]=$a[1];}}
+class µ{function __call($n,$a){static$r;$n=='_'?@$r[$_ENV[REQUEST_METHOD].$_ENV[REQUEST_URI]]():$r[$n.$a[0]]=$a[1];}}
