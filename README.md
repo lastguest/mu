@@ -1,6 +1,6 @@
 # µ
 
-a Sinatra inspired PHP microframework in only 140 bytes.
+a Sinatra inspired PHP microframework in only 117 bytes.
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/lastguest/mu/badges/quality-score.png?s=e29b47be8993b94957e9e6e9f37edd6184f6c753)](https://scrutinizer-ci.com/g/lastguest/mu/)
 
@@ -9,7 +9,7 @@ a Sinatra inspired PHP microframework in only 140 bytes.
 **DO NOT USE IT IN PRODUCTION!**
 
 ```php
-class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD)][getenv(REQUEST_URI)]():$r[$n][$a[0]]=$a[1];}}
+class µ{function __call($n,$a){static$r;$n=='_'?@$r[$_ENV[REQUEST_METHOD].$_ENV[REQUEST_URI]]():$r[$n.$a[0]]=$a[1];}}
 ```
 
 ### How to use
@@ -17,14 +17,16 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 **Step 1:** Define routes callbacks
 
 ```php
-µ::GET('/',function(){
+$x = new µ;
+
+$x->GET('/',function(){
  	echo 'What is your name?';
  	echo '<form method=post><input type=text name=username><input type=submit></form>';
 });
 ```
 	
 ```php
-µ::POST('/',function(){
+$x->POST('/',function(){
 	echo 'Hello ',$_POST['username'],', how are you?';
 });
 ```
@@ -32,7 +34,7 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 **Step 2:** Run the app
 	
 ```php
-µ::_();
+$x->_();
 ```
 
 **Step 3:** Breath.
