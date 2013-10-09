@@ -9,7 +9,7 @@ a Sinatra inspired PHP microframework in only 140 bytes.
 **DO NOT USE IT IN PRODUCTION!**
 
 ```php
-class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD)][getenv(REQUEST_URI)]():$r[$n][$a[0]]=$a[1];}}
+class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]():$r[$n.$a[0]]=$a[1];}}
 ```
 
 ### How to use
@@ -38,7 +38,10 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 **Step 3:** Breath.
 
 ## Thanks
-[Xeoncross](https://github.com/Xeoncross)
+[David Pennington (Xeoncross)](https://github.com/Xeoncross)
+
+[Tyler Romeo (Parent5446)](https://github.com/Parent5446)
+
 
 
 ## License (MIT)
