@@ -1,6 +1,6 @@
 # µ
 
-a Sinatra inspired PHP microframework in only 140 bytes.
+a Sinatra inspired PHP microframework in only 139 bytes.
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/lastguest/mu/badges/quality-score.png?s=e29b47be8993b94957e9e6e9f37edd6184f6c753)](https://scrutinizer-ci.com/g/lastguest/mu/)
 
