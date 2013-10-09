@@ -5,7 +5,7 @@ a Sinatra inspired PHP microframework in only 140 bytes.
 **Warning: This is a pure proof of concept of a tweet sized URL router, DO NOT USE IT IN PRODUCTION!**
 
 ```php
-class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD)][getenv(REQUEST_URI)]():$r[$n][$a[0]]=$a[1];}}
+class µ{function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD)][getenv(REQUEST_URI)]():$r[$n][$a[0]]=$a[1];}}
 ```
 
 ### How to use
@@ -18,7 +18,7 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
  	echo '<form method=post><input type=text name=username><input type=submit></form>';
 });
 ```
-	
+
 ```php
 µ::POST('/',function(){
 	echo 'Hello ',$_POST['username'],', how are you?';
@@ -26,7 +26,7 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 ```
 
 **Step 2:** Run the app
-	
+
 ```php
 µ::_();
 ```
