@@ -8,7 +8,7 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 
 ### How to use
 
-1. Define routes callbacks
+**Step 1:** Define routes callbacks
 
 ```php
 µ::GET('/',function(){
@@ -23,13 +23,13 @@ class µ{static function __callStatic($n,$a){static$r;return$n=='_'?@$r[getenv(R
 });
 ```
 
-2. Run the app
+**Step 2:** Run the app
 	
 ```php
 µ::_();
 ```
 
-3. Breath.
+**Step 3:** Breath.
 
 ## Thanks
 [Xeoncross](https://github.com/Xeoncross)
