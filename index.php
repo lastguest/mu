@@ -9,14 +9,10 @@
 
 include 'mu.php';
 
-// Init router
-$µ = new µ;
-
-
 /**
 *
 * Define routes callbacks with this syntax :
-*	µ::METHOD('ROUTE',CALLBACK);
+*	µ('METHOD ROUTE',CALLBACK);
 *
 *	- METHOD can be GET,POST,PUT,DELETE,HEAD or some custom HTTP verb
 *	- ROUTE is the URL path fragment
@@ -24,7 +20,7 @@ $µ = new µ;
 */
 
 
-$µ->GET('/',function(){
+µ('GET /',function(){
 	echo 'What is your name?';
 	echo '<form method=post><input type=text name=username><input type=submit></form>';
 });
@@ -33,7 +29,7 @@ $µ->GET('/',function(){
 *	This is executed only when the browser call a POST on '/' route
 */
 
-$µ->POST('/',function(){
+µ('POST /',function(){
 	echo 'Hello ',$_POST['username'],', how are you?';
 });
 
@@ -42,11 +38,11 @@ $µ->POST('/',function(){
 *	Invoke the phpinfo function on /php/info route
 */
 
-$µ->GET('/php/info','phpinfo');
+µ('GET /php/info','phpinfo');
 
 
 /**
 *	Run the application
 */
 
-$µ->_();
+µ();
