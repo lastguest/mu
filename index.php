@@ -1,13 +1,17 @@
 <?php
 
 /**
- * µ PHP microframework
+ * µ PHP microframework - Hardcore version
  *
  * @author Stefano Azzolini <lastguest@gmail.com>
  */
 
 
 include 'mu.php';
+
+// Init router
+$µ = new µ;
+
 
 /**
 *
@@ -20,8 +24,7 @@ include 'mu.php';
 */
 
 
-
-µ::GET('/',function(){
+$µ->GET('/',function(){
 	echo 'What is your name?';
 	echo '<form method=post><input type=text name=username><input type=submit></form>';
 });
@@ -30,7 +33,7 @@ include 'mu.php';
 *	This is executed only when the browser call a POST on '/' route
 */
 
-µ::POST('/',function(){
+$µ->POST('/',function(){
 	echo 'Hello ',$_POST['username'],', how are you?';
 });
 
@@ -39,11 +42,11 @@ include 'mu.php';
 *	Invoke the phpinfo function on /php/info route
 */
 
-µ::GET('/php/info','phpinfo');
+$µ->GET('/php/info','phpinfo');
 
 
 /**
 *	Run the application
 */
 
-µ::_();
+$µ->_();
