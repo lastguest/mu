@@ -1,6 +1,6 @@
 # µ - Hardcore version
 
-a Sinatra inspired PHP microframework in only 126 bytes.
+a Sinatra inspired PHP microframework in only 99 bytes.
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/lastguest/mu/badges/quality-score.png?s=e29b47be8993b94957e9e6e9f37edd6184f6c753)](https://scrutinizer-ci.com/g/lastguest/mu/)
 
@@ -9,42 +9,37 @@ a Sinatra inspired PHP microframework in only 126 bytes.
 **DO NOT USE IT IN PRODUCTION!**
 
 ```php
-class µ{function __call($n,$a){static$r;return$n=='_'?@$r[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]():$r[$n.$a[0]]=$a[1];}}
+function µ($a=0,$b=0){static$r;$a?$r[$a]=$b:@$r[getenv(REQUEST_METHOD).' '.getenv(REQUEST_URI)]();}
 ```
 
 ### How to use
 
-**Step 2:** Init µ
+**Step 1:** Define routes callbacks
 
 ```php
-$µ = new µ;
-```
-
-**Step 2:** Define routes callbacks
-
-```php
-$µ->GET('/',function(){
- 	echo 'What is your name?';
- 	echo '<form method=post><input type=text name=username><input type=submit></form>';
+µ('GET /',function(){
+    echo 'What is your name?';
+    echo '<form method=post><input type=text name=username><input type=submit></form>';
 });
 ```
 	
 ```php
-$µ->POST('/',function(){
-	echo 'Hello ',$_POST['username'],', how are you?';
+µ('POST /',function(){
+    echo 'Hello ',$_POST['username'],', how are you?';
 });
 ```
 
-**Step 3:** Run the app
+**Step 2:** Run the app
 	
 ```php
-$µ->_();
+µ();
 ```
 
-**Step 4:** Breath.
+**Step 3:** Breath.
 
 ## Thanks
 
+[celtric](https://github.com/celtric)
 [Tyler Romeo (Parent5446)](https://github.com/Parent5446)
 
 
