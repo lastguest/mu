@@ -45,6 +45,35 @@ class µ{static function __callStatic($n,$a){static$r;$n==@_?@$r[getenv(REQUEST_
 [Tyler Romeo (Parent5446)](https://github.com/Parent5446)
 
 
+## Commented source
+
+```php
+
+class µ {
+    public static function __callStatic($functionName,$functionParameters){
+        static $callbackMap;
+        
+        // Check if we must resolve the request
+        if($functionName == '_'){
+        
+            // Compose the method+uri key and
+            // invoke the callback (silence failures)
+        
+            @$callbackMap[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]();
+        
+        } else {
+        
+            // Add the route handler to the callbackMap
+            // $functionName is the Request HTTP Method
+            // $functionParameters[0] is the route
+            // $functionParameters[1] is the callback
+        
+            $callbackMap[$functionName.$functionParameters[0]] = $functionParameters[1];
+        }
+    }
+}
+```
+
 
 ## License (MIT)
 
