@@ -1,15 +1,15 @@
 # µ
 
-a PHP micro URL router in only 131 bytes. (99 bytes in *hardcore* branch)
+a PHP micro URL router in only 140 bytes. (99 bytes in *hardcore* branch)
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/lastguest/mu/badges/quality-score.png?s=e29b47be8993b94957e9e6e9f37edd6184f6c753)](https://scrutinizer-ci.com/g/lastguest/mu/)
 
-**Warning: This is a pure proof of concept of a tweet sized URL router**
+**Warning: This is a pure proof of concept of a tweet-sized URL router**
 
 **DO NOT USE IT IN PRODUCTION!**
 
 ```php
-class µ{static function __callStatic($n,$a){static$r;$n==@_?@$r[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]():$r[$n.$a[0]]=$a[1];}}
+class µ{static function __callStatic($n,$a){static$r;$n==@_?($_=@$r[getenv(REQUEST_METHOD).getenv(REQUEST_URI)])&&$_():$r[$n.$a[0]]=$a[1];}}
 ```
 
 ### How to use
@@ -59,7 +59,7 @@ class µ {
             // Compose the method+uri key and
             // invoke the callback (silence failures)
         
-            @$callbackMap[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]();
+            ($callback = @$callbackMap[getenv(REQUEST_METHOD).getenv(REQUEST_URI)]) && $callback();
         
         } else {
         

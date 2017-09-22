@@ -2,7 +2,7 @@
 	"name": "lastguest/mu",
 	"type": "library",
 	"description": "An URL router in only 140bytes",
-	"keywords": ["sinatra", "mu", "url-router", "router", "slim"],
+	"keywords": ["sinatra", "mu", "url-router", "router", "slim","picoframework"],
 	"authors": [
 		{
 			"name": "Stefano Azzolini",

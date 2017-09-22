@@ -20,7 +20,6 @@ include 'mu.php';
 */
 
 
-
 µ::GET('/',function(){
 	echo 'What is your name?';
 	echo '<form method=post><input type=text name=username><input type=submit></form>';
